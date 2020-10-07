@@ -14,13 +14,13 @@
         margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(2,auto);
+        grid-auto-rows: minmax(45px,auto);
         justify-content: space-between;
         row-gap: 15px;
         &-item {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(3,auto);
-            justify-content: space-between;
+            grid-template: repeat(2, minmax(21px, auto)) / repeat(2, auto);
             padding-left: 25px;
             &::before {
                 content: '';
@@ -34,20 +34,17 @@
             p {
                 font-size: 12px;
                 line-height: 18px;
-                grid-column: 1/4;
+                grid-column: 1/3;
+            }
+            .price__wrapper-header , .price__wrapper-money{
+                font-size: 14px;
+                line-height: 21px;
+                font-weight: bold;
+            }
+            .price__wrapper-money {
+                justify-self: end;
             }
         }
-        &-header {
-            font-size: 14px;
-            line-height: 21px;
-            font-weight: bold;
-            grid-column: 1/3;
-        }
-        &-money {
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 21px;
-            justify-self: end;
-        }
+       
     }
 }
